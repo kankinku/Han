@@ -1,10 +1,7 @@
 [project]
-name = "python-basic"
+name = "0401-db-py03"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = []
-
-[tool.uv.workspace]
-members = ["0401_DB_py03"]
