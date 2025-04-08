@@ -1,0 +1,442 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f8f5ff;
+  color: #4a3a5a;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Gaegu', cursive;
+  color: #5d4777;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #7b5ea7;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #9370db;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #e6deff;
+  padding: 15px 0;
+  box-shadow: 0 4px 12px rgba(125, 95, 175, 0.1);
+  position: relative;
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 3px solid #9370db;
+  padding: 5px;
+  background-color: #fff;
+}
+
+.logo h1 {
+  font-size: 28px;
+  color: #6a4c93;
+  text-shadow: 1px 1px 2px rgba(106, 76, 147, 0.2);
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+}
+
+.main-menu li {
+  margin-left: 25px;
+  position: relative;
+}
+
+.main-menu a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6a4c93;
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.main-menu a:hover {
+  background-color: #d0c0f0;
+  color: #4a3a5a;
+}
+
+/* 배너 스타일 */
+.banner-container {
+  padding: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner {
+  max-width: 1240px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(125, 95, 175, 0.2);
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 5px solid #d0c0f0;
+}
+
+.banner-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+}
+
+.cloud-1 {
+  width: 100px;
+  height: 60px;
+  top: 30px;
+  left: 10%;
+  animation: float 15s infinite ease-in-out;
+}
+
+.cloud-2 {
+  width: 150px;
+  height: 80px;
+  top: 50px;
+  right: 15%;
+  animation: float 20s infinite ease-in-out reverse;
+}
+
+.cloud-3 {
+  width: 120px;
+  height: 70px;
+  bottom: 40px;
+  left: 20%;
+  animation: float 18s infinite ease-in-out 2s;
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0) translateX(0);
+  }
+  50% {
+      transform: translateY(-15px) translateX(15px);
+  }
+}
+
+/* 섹션 헤더 스타일 */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed #d0c0f0;
+}
+
+.section-header h2 {
+  font-size: 26px;
+  color: #6a4c93;
+}
+
+.view-more {
+  font-family: 'Gaegu', cursive;
+  font-size: 18px;
+  color: #9370db;
+  padding: 5px 15px;
+  border-radius: 20px;
+  background-color: #f0ebff;
+  transition: all 0.3s ease;
+}
+
+.view-more:hover {
+  background-color: #d0c0f0;
+  transform: translateY(-2px);
+}
+
+/* 상품 그리드 스타일 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 180px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(125, 95, 175, 0.15);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #9370db, #d0c0f0);
+  z-index: -1;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-image {
+  height: 210px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  padding: 12px;
+}
+
+.product-info h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #5d4777;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-weight: 700;
+  color: #9370db;
+  margin-bottom: 8px;
+}
+
+.seller-info {
+  display: flex;
+  align-items: center;
+}
+
+.seller-avatar {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid #d0c0f0;
+}
+
+.seller-name {
+  font-size: 12px;
+  color: #7b5ea7;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #6a4c93;
+  color: #fff;
+  padding: 40px 0 0;
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.footer-info h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.footer-info p {
+  color: #e6deff;
+  font-size: 14px;
+}
+
+.footer-contact {
+  text-align: right;
+}
+
+.footer-contact p {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #e6deff;
+}
+
+.footer-contact a {
+  color: #d0c0f0;
+}
+
+.footer-contact a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-decoration {
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.grass {
+  height: 30px;
+  background-image: 
+      radial-gradient(circle at 10px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 40px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 70px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 100px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 130px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 160px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 190px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 220px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 250px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 280px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 310px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 340px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 370px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 400px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 430px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 460px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 490px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 520px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 550px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 580px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 610px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 640px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 670px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 700px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 730px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 760px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 790px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 820px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 850px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 880px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 910px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 940px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 970px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1000px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1030px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1060px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1090px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1120px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1150px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1180px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1210px 10px, #9370db 10px, transparent 0),
+      radial-gradient(circle at 1240px 10px, #9370db 10px, transparent 0);
+  background-size: 1270px 30px;
+  background-position: center bottom;
+  animation: grassMove 60s linear infinite;
+}
+
+@keyframes grassMove {
+  0% {
+      background-position: 0 bottom;
+  }
+  100% {
+      background-position: 1270px bottom;
+  }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .product-grid {
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  
+  .footer-content {
+      flex-direction: column;
+  }
+  
+  .footer-contact {
+      text-align: left;
+      margin-top: 20px;
+  }
+  
+  .main-menu {
+      display: none;
+  }
+  
+  .logo h1 {
+      font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 15px;
+  }
+  
+  .banner {
+      height: 200px;
+  }
+  
+  .section-header h2 {
+      font-size: 22px;
+  }
+}
