@@ -1,0 +1,14 @@
+<h1>{{question.subject}}</h1>
+<div>
+    {{question.content}}
+</div>
+{% comment %} POST 방식은 전송 헤더에 데이터를 담아서 전송한다. {% endcomment %}
+{% comment %} GET 방식은 링크에 내용이 다 들어가고, 너무 길면 잘린다. {% endcomment %}
+<hr>
+<form action="{%url 'answer_create' question.id%}" method="POST">
+    {% csrf_token %}
+    {% comment %} 보안을 강화해줌 {% endcomment %}
+    <textarea name="content" id="content" rows="10"></textarea>
+    <input type="submit" value="답변 등록">
+
+</from>
